@@ -1,6 +1,7 @@
 import Logo from "@/components/logo";
 import ThemeToggle from "@/components/theme-toggle";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Kiso | Minimalism Redefined",
@@ -25,19 +26,26 @@ export default function Home() {
     <div className="min-h-screen flex flex-col items-center justify-center p-8 bg-white dark:bg-black">
       {/* 상단 네비게이션 */}
       <nav className="fixed top-8 left-1/2 -translate-x-1/2 flex items-center gap-8 text-sm tracking-wide text-black/70 dark:text-white/70">
-        <a
+        <Link
           href="/works"
           className="hover:text-black dark:hover:text-white transition-colors"
         >
           works
-        </a>
+        </Link>
         <span className="text-black/30 dark:text-white/30">·</span>
-        <a
+        <Link
           href="/uses"
           className="hover:text-black dark:hover:text-white transition-colors"
         >
           uses
-        </a>
+        </Link>
+        <span className="text-black/30 dark:text-white/30">·</span>
+        <Link
+          href="/posts"
+          className="hover:text-black dark:hover:text-white transition-colors"
+        >
+          posts
+        </Link>
       </nav>
 
       <ThemeToggle />
@@ -57,7 +65,10 @@ export default function Home() {
         </p>
 
         <div className="pt-4">
-          <a href="#contact" className="group relative inline-block">
+          <Link
+            href="mailto:contact@kiso.dev"
+            className="group relative inline-block"
+          >
             {/* 네온 효과 배경 */}
             <div className="absolute -inset-3 rounded-lg bg-black/20 dark:bg-white/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
 
@@ -70,17 +81,11 @@ export default function Home() {
             >
               EXPLORE
             </span>
-          </a>
+          </Link>
         </div>
       </main>
 
       <footer className="absolute bottom-8 flex flex-col items-center gap-4 text-sm text-black/50 dark:text-white/50">
-        <a
-          href="mailto:contact@kiso.dev"
-          className="hover:text-black dark:hover:text-white transition-colors tracking-wide"
-        >
-          contact@kiso.dev
-        </a>
         <div>© {new Date().getFullYear()} Kiso. All rights reserved.</div>
       </footer>
     </div>

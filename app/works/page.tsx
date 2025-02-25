@@ -53,7 +53,7 @@ export default function Works() {
 
         <div className="space-y-16">
           {works.map((work, index) => (
-            <a key={index} href={work.link} className="group block">
+            <Link key={index} href={work.link} className="group block">
               <article className="space-y-4">
                 <div className="aspect-[16/9] bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden">
                   {/* 프로젝트 썸네일 이미지가 들어갈 자리 */}
@@ -70,7 +70,7 @@ export default function Works() {
                   {work.description}
                 </p>
               </article>
-            </a>
+            </Link>
           ))}
         </div>
       </main>
