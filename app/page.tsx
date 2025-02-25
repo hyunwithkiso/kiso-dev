@@ -1,4 +1,4 @@
-import Logo from "@/components/logo";
+import Logo from "@/components/circle-logo";
 import ThemeToggle from "@/components/theme-toggle";
 import type { Metadata } from "next";
 import Link from "next/link";
