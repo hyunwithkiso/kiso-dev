@@ -1,5 +1,24 @@
-import Logo from "@/components/Logo";
-import ThemeToggle from "@/components/ThemeToggle";
+import Logo from "@/components/logo";
+import ThemeToggle from "@/components/theme-toggle";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Kiso | Minimalism Redefined",
+  description: "Minimalism in its purest form - Kiso brings simplicity to life",
+  openGraph: {
+    title: "Kiso | Minimalism Redefined",
+    description:
+      "Minimalism in its purest form - Kiso brings simplicity to life",
+    images: [
+      {
+        url: "https://kiso.dev/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Kiso - Minimalism Redefined",
+      },
+    ],
+  },
+};
 
 export default function Home() {
   return (

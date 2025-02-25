@@ -2,11 +2,19 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Selected Works",
-  description: "A collection of minimal and purposeful projects",
+  title: "Works",
+  description: "Projects and works",
   openGraph: {
-    title: "Selected Works | Kiso",
-    description: "A collection of minimal and purposeful projects",
+    title: "Works | Kiso",
+    description: "Projects and works",
+    images: [
+      {
+        url: "https://kiso.dev/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Kiso - Works",
+      },
+    ],
   },
 };
 

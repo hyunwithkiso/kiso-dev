@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Uses | Kiso",
     description: "Tools and technologies I use for my work and daily life",
+    images: [
+      {
+        url: "https://kiso.dev/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Kiso - Tools and Technologies",
+      },
+    ],
   },
 };
 
