@@ -1,4 +1,14 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Uses",
+  description: "Tools and technologies I use for my work and daily life",
+  openGraph: {
+    title: "Uses | Kiso",
+    description: "Tools and technologies I use for my work and daily life",
+  },
+};
 
 export default function Uses() {
   const categories = [

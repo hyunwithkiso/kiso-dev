@@ -1,4 +1,14 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Selected Works",
+  description: "A collection of minimal and purposeful projects",
+  openGraph: {
+    title: "Selected Works | Kiso",
+    description: "A collection of minimal and purposeful projects",
+  },
+};
 
 export default function Works() {
   const works = [
