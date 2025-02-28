@@ -36,40 +36,16 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="w-10 h-10 flex items-center justify-center dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-colors rounded-full"
+      className="w-8 h-8 flex items-center justify-center rounded-full transition-colors hover:bg-foreground/5"
       aria-label="Toggle theme"
     >
-      {theme === "light" ? (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 18 18"
-          strokeWidth={1}
-          stroke="currentColor"
-          className="w-5 h-5"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M16.314 11.252A7.29 7.29 0 0 1 13.5 11.812c-4.039 0-7.312-3.273-7.312-7.312 0-.998.2-1.948.561-2.814A7.315 7.315 0 0 0 2.25 8.437C2.25 12.476 5.523 15.75 9.562 15.75a7.315 7.315 0 0 0 6.752-4.498Z"
-          />
-        </svg>
-      ) : (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 18 18"
-          strokeWidth={1}
-          stroke="currentColor"
-          className="w-5 h-5"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M9 2.25v1.688M13.773 4.29l-1.193 1.193M15.75 9h-1.688m-.29 4.773l-1.193-1.193M9 14.062V15.75m-3.58-3.17-1.193 1.193M3.938 9H2.25m3.17-3.58L4.227 4.227M11.812 9a2.812 2.812 0 1 1-5.624 0 2.812 2.812 0 0 1 5.624 0Z"
-          />
-        </svg>
-      )}
+      <div className="w-4 h-4 rounded-full border border-foreground/30 relative">
+        {theme === "light" ? (
+          <div className="absolute inset-1 bg-foreground rounded-full" />
+        ) : (
+          <div className="absolute inset-[2px] border border-foreground/30 rounded-full" />
+        )}
+      </div>
     </button>
   );
 }

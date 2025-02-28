@@ -78,12 +78,12 @@ export default async function PostPage({ params }: { params: Params }) {
   }
 
   return (
-    <div className="min-h-screen flex flex-col p-8 bg-white dark:bg-black">
+    <div className="min-h-screen flex flex-col p-8 bg-background">
       {/* 헤더 */}
       <header className="fixed top-8 left-8">
         <Link
           href="/posts"
-          className="text-sm tracking-wide text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white transition-colors"
+          className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors"
         >
           ← back to posts
         </Link>
@@ -92,10 +92,10 @@ export default async function PostPage({ params }: { params: Params }) {
       <main className="max-w-2xl mx-auto w-full pt-32">
         <article className="space-y-8">
           <header className="space-y-4">
-            <h1 className="text-4xl font-extralight text-black dark:text-white">
+            <h1 className="text-4xl font-extralight text-foreground">
               {post.title}
             </h1>
-            <time className="block text-sm text-black/50 dark:text-white/50">
+            <time className="block text-sm text-muted-foreground">
               {new Date(post.date).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",

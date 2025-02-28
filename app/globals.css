@@ -7,12 +7,12 @@
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
 
-    --border: 0 0% 90%;
+    --border: 0 0% 89.8%;
 
-    --radius: 0px;
+    --glow: 0 0% 0%;
   }
 
   .dark {
@@ -23,6 +23,8 @@
     --muted-foreground: 0 0% 65%;
 
     --border: 0 0% 20%;
+
+    --glow: 0 0% 100%;
   }
 }
 
@@ -36,11 +38,59 @@
   }
 
   ::selection {
-    @apply bg-black text-white dark:bg-white dark:text-black;
+    @apply bg-foreground text-background;
   }
 }
 
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* 글로우 효과 */
+.glow {
+  position: relative;
+}
+
+.glow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 40px 10px hsl(var(--glow) / 0.3);
+  z-index: -1;
+  animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 40px 10px hsl(var(--glow) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 60px 15px hsl(var(--glow) / 0.2);
+  }
+  100% {
+    box-shadow: 0 0 40px 10px hsl(var(--glow) / 0.3);
+  }
+}
+
+/* 미니멀리즘 스타일 */
+body {
+  font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 부드러운 스크롤 효과 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 선택 스타일 */
+::selection {
+  background-color: hsl(var(--foreground) / 0.1);
+  color: hsl(var(--foreground));
 }

@@ -49,19 +49,19 @@ export default async function PostsPage() {
   const posts = await getPosts();
 
   return (
-    <div className="min-h-screen flex flex-col p-8 bg-white dark:bg-black">
+    <div className="min-h-screen flex flex-col p-8 bg-background">
       {/* 헤더 */}
       <header className="fixed top-8 left-8">
         <Link
           href="/"
-          className="text-sm tracking-wide text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white transition-colors"
+          className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors"
         >
           ← back
         </Link>
       </header>
 
       <main className="max-w-2xl mx-auto w-full pt-32">
-        <h1 className="text-3xl font-extralight mb-16 text-black dark:text-white">
+        <h1 className="text-3xl font-extralight mb-16 text-foreground">
           Posts
         </h1>
 
@@ -71,10 +71,10 @@ export default async function PostsPage() {
               <Link href={`/post/${post.id}`}>
                 <div className="space-y-4">
                   <div className="flex items-baseline justify-between gap-4">
-                    <h2 className="text-xl font-light text-black dark:text-white group-hover:text-black/70 dark:group-hover:text-white/70 transition-colors">
+                    <h2 className="text-xl font-light text-foreground group-hover:text-muted-foreground transition-colors">
                       {post.title}
                     </h2>
-                    <time className="text-sm text-black/50 dark:text-white/50">
+                    <time className="text-sm text-muted-foreground">
                       {new Date(post.date).toLocaleDateString("en-US", {
                         year: "numeric",
                         month: "long",
@@ -82,7 +82,7 @@ export default async function PostsPage() {
                       })}
                     </time>
                   </div>
-                  <p className="text-black/70 dark:text-white/70 font-light">
+                  <p className="text-muted-foreground font-light">
                     {post.description}
                   </p>
                 </div>

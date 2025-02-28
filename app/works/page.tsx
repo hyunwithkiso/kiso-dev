@@ -35,19 +35,19 @@ export default function Works() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col p-8 bg-white dark:bg-black">
+    <div className="min-h-screen flex flex-col p-8 bg-background">
       {/* 헤더 */}
       <header className="fixed top-8 left-8">
         <Link
           href="/"
-          className="text-sm tracking-wide text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white transition-colors"
+          className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors"
         >
           ← back
         </Link>
       </header>
 
       <main className="max-w-2xl mx-auto w-full pt-32">
-        <h1 className="text-3xl font-extralight mb-16 text-black dark:text-white">
+        <h1 className="text-3xl font-extralight mb-16 text-foreground">
           Selected Works
         </h1>
 
@@ -55,18 +55,18 @@ export default function Works() {
           {works.map((work, index) => (
             <Link key={index} href={work.link} className="group block">
               <article className="space-y-4">
-                <div className="aspect-[16/9] bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden">
+                <div className="aspect-[16/9] bg-muted rounded-lg overflow-hidden">
                   {/* 프로젝트 썸네일 이미지가 들어갈 자리 */}
                 </div>
                 <div className="flex items-baseline justify-between gap-4">
-                  <h2 className="text-xl font-light text-black dark:text-white group-hover:text-black/70 dark:group-hover:text-white/70 transition-colors">
+                  <h2 className="text-xl font-light text-foreground group-hover:text-muted-foreground transition-colors">
                     {work.title}
                   </h2>
-                  <span className="text-sm text-black/50 dark:text-white/50">
+                  <span className="text-sm text-muted-foreground">
                     {work.year}
                   </span>
                 </div>
-                <p className="text-black/70 dark:text-white/70 font-light">
+                <p className="text-muted-foreground font-light">
                   {work.description}
                 </p>
               </article>
